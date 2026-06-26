@@ -50,7 +50,6 @@ h1 {
     align-items: center;
     gap: 18px;
     margin-top: 20px;
-
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 2s;
