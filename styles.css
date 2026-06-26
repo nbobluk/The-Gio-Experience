@@ -74,3 +74,37 @@ h1 {
 .x-link:hover, .x-link:focus-visible {
     color: #555555;
 }
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+  
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+  
+.hero h2, .links h2, .bio h2, footer h2 {
+    display: inline-block;
+    background-color: #c7e3b3;
+    padding: 8px 28px;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    border-radius: 45%;
+}
+
+.hero h2 {
+    display: none;
+}
+  
+.hero img {
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;    
+    border-radius: 90px;
+    border: 5px solid #1f1f1f;
+    margin: 0 auto;
+}
