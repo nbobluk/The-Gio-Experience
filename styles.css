@@ -21,7 +21,7 @@ nav {
     justify-content: space-between;
     max-width: 900px;
     margin: 0 auto 32px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
@@ -37,7 +37,7 @@ nav a, .socials a, .card {
 h1 {
     color: #c5b567;
     font-family: "Raleway Dots", sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
     margin: 20px 0;
     letter-spacing: 2px;
@@ -104,7 +104,7 @@ main {
     width: 58%;
     height: 58%;
     object-fit: cover;
-    border-radius: 90px;
+    border-radius: 30px;
     border: 2px solid #1f1f1f;
     margin: 0 auto;
     opacity: 0;
