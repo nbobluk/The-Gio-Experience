@@ -108,3 +108,63 @@ main {
     border: 5px solid #1f1f1f;
     margin: 0 auto;
 }
+
+.links {
+    text-align: center;
+    margin-bottom: 60px;
+}
+  
+.links h2 {
+    display:none;
+}
+  
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+  
+.card {
+    width: 220px;
+    min-height: 80px;
+    padding: 3px 8px;
+    border: 3px dashed #1f1f1f;
+    background-color: #ffffff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35%;
+}
+  
+.card:hover {
+    background-color: #c7e3b3;
+}
+
+.bio {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bio h2 {
+    margin-bottom: 12px;
+    display: none;
+}
+  
+.bio p {
+    max-width: 750px;
+    margin: 16px auto;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+  
+footer {
+    padding: 32px 24px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+}
+
+/*Performing arts*/
