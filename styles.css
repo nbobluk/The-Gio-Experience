@@ -41,6 +41,36 @@ h1 {
 .socials {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 18px;
     margin-top: 20px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    color: #1f1f1f;
+    text-decoration: none;
+}
+  
+.social-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: block;
+}
+  
+.instagram-link:hover, .instagram-link:focus-visible {
+    color: #c13584;
+}
+  
+.youtube-link:hover, .youtube-link:focus-visible {
+    color: #c00000;
+}
+  
+.tiktok-link:hover, .tiktok-link:focus-visible {
+    color: #00a6b2;
+}
+  
+.x-link:hover, .x-link:focus-visible {
+    color: #555555;
 }
