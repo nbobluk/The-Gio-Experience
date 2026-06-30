@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: "Raleway", sans-serif;
     background-color: #f5f0e8;
-    color: #1f1f1f;
+    color: #38372a;
 
     background-image: url("images/astro.jpg");
     background-size: cover;
@@ -17,8 +17,8 @@ body {
 
 header {
     padding: 28px;
-    border-bottom: 1px solid #1f1f1f;
-    background-color: #2c2c2c;
+    border-bottom: 1px solid #38372a;
+    background-color: #414850;
     text-align: center;
 }
   
@@ -36,12 +36,12 @@ nav {
 
 nav a, .socials a, .card {
     padding: 5px;
-    color: #c5b567;
+    color: #c6ba8d;
     text-decoration: none;
 }
   
 h1 {
-    color: #c5b567;
+    color: #c6ba8d;
     font-family: "Raleway Dots", sans-serif;
     font-size: 3.5rem;
     font-weight: 900;
@@ -49,7 +49,7 @@ h1 {
     letter-spacing: 2px;
     animation: fadeIn 3.5s ease-in-out forwards;
 }
-  
+
 .socials {
     display: flex;
     justify-content: center;
@@ -64,7 +64,7 @@ h1 {
 .socials a {
     display: inline-flex;
     align-items: center;
-    color: #c5b567;
+    color: #c6ba8d;
     text-decoration: none;
 }
   
@@ -111,11 +111,22 @@ main {
     height: 58%;
     object-fit: cover;
     border-radius: 30px;
-    border: 2px solid #1f1f1f;
     margin: 0 auto;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 2s;
+
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 60%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 30%,
+        transparent 60%
+    );
 }
 
 @keyframes fadeIn {
@@ -151,8 +162,8 @@ main {
     width: 200px;
     min-height: 70px;
     padding: 3px 8px;
-    border: 1px solid #1f1f1f;
-    background-color: #ffffff;
+    border: 1px solid #38372a;
+    background-color: #414850;
     font-size: 1.4rem;
     text-transform: uppercase;
     display: flex;
@@ -163,17 +174,16 @@ main {
 }
   
 .card:hover, .card:focus-visible {
-    background-color: #2c2c2c;
+    background-color: #38372a;
 }
 
 .bio {
     text-align: center;
     margin-bottom: 60px;
-    background-color: rgba(245, 240, 232, 0.88);
+    background-color: rgba(245, 240, 232, 0.75);
     padding: 13px;
     border-radius: 30px;
     animation: fadeIn 2.5s ease-in-out forwards;
-    animation-delay: 3s;
 }
 
 .bio h2 {
@@ -186,14 +196,12 @@ main {
     margin: 0 auto;
     line-height: 1.7;
     font-size: 1.1rem;
-    animation: fadeIn 2.5s ease-in-out forwards;
-    animation-delay: 3s;
 }
   
 footer {
     padding: 32px 24px;
-    background-color: #1f1f1f;
-    color: #ffffff;
+    background-color: #414850;
+    color: #c6ba8d;
     text-align: center;
 }
 
@@ -214,6 +222,12 @@ footer h2 {
     margin: 0 auto;
 }
 
+.arts-list, footer h2, footer p {
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
 .arts-list h2 {
     display: none;
 }
@@ -225,23 +239,36 @@ footer h2 {
     align-items: center;
     margin-bottom: 48px;
 }
-  
+
 .art-row img {
     width: 200px;
     height: 300px;
     object-fit: cover;
-    border: 4px solid #1f1f1f;
+    border: 1px solid #38372a;
     border-radius: 40px;
-    background-color: #ffffff;
+    background-color: #c6ba8d;
 }
   
 .art-row h2 {
+    font-family: "Raleway Dots", sans-serif;
     display: inline-block;
-    background-color: #c7e3b3;
-    padding: 6px 24px;
-    border-radius: 45%;
+    color: #c6ba8d;
+    background-color: #414850;
+    padding: 19px 34px;
+    border-radius: 50%;
     font-size: 2rem;
     margin: 0 0 12px;
+     -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 40%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 55%,
+        transparent 70%
+    );
 }
   
 .art-row p {
@@ -263,3 +290,190 @@ footer h2 {
 }
 
 /*California Project*/
+
+.california-intro {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) 1.2fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 70px;
+    padding: 30px;
+    background-color: rgba(245, 240, 232, 0.9);
+    border: 1px solid #38372a;
+    border-radius: 30px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.california-intro img {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+    padding: 16px;
+    background-color: #c6ba8d;
+    border: 1px solid #38372a;
+    border-radius: 30px;
+    object-fit: contain;
+}
+
+.california-bio h2, .landmark-section > h2 {
+    font-family: "Raleway Dots", sans-serif;
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 18px 29px;
+    color: #c6ba8d;
+    background-color:rgba(65, 72, 80, .78);
+    font-size: 2rem;
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 60%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 65%,
+        transparent 70%
+    );
+}
+
+.california-bio p {
+    margin: 0 0 18px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.california-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.landmark-section {
+    padding: 34px;
+    background-color: rgba(245, 240, 232, 0.9);
+    border: 1px solid #38372a;
+    border-radius: 30px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.landmark-section > h2 {
+    margin-bottom: 28px;
+}
+
+.landmark-browser {
+    max-height: 850px;
+    overflow-y: auto;
+    padding-right: 14px;
+}
+
+.landmark-browser::-webkit-scrollbar {
+    width: 10px;
+}
+
+.landmark-browser::-webkit-scrollbar-track {
+    background-color: #f5f0e8;
+    border-radius: 20px;
+}
+
+.landmark-browser::-webkit-scrollbar-thumb {
+    background-color: #c6ba8d;
+    border-radius: 20px;
+    border: 2px solid #f5f0e8;
+}
+
+.landmark-item {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 28px;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid #38372a;
+}
+
+.landmark-item:first-child {
+    padding-top: 0;
+}
+
+.landmark-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.landmark-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid #38372a;
+    border-radius: 24px;
+    background-color: #c6ba8d;
+    transition: transform 0.4s ease;
+}
+
+.landmark-item h3 {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 18px;
+    background-color: #c6ba8d;
+    border: 1px solid #38372a;
+    border-radius: 35%;
+    font-size: 1.4rem;
+}
+
+.landmark-item p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    .california-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+        padding: 24px;
+    }
+
+    .california-bio h2, .landmark-section > h2 {
+        font-size: 1.6rem;
+    }
+
+    .landmark-section {
+        padding: 24px;
+    }
+
+    .landmark-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .landmark-item img {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .landmark-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .landmark-browser {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+}
+
