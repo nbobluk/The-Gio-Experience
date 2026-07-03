@@ -368,16 +368,40 @@ footer h2 {
 .art-row h2 {
     display: none;
 }
-  
-.art-row p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin: 0;
-    max-width: 950px;
+
+.art-row > div {
+    min-width: 0;
+}
+
+.art-description {
+    max-height: 280px;
+    overflow-y: auto;
+
     color: #c6ba8d;
-    background-color: rgba(65,72,80, 1);
+    background-color: rgba(65, 72, 80, 1);
     padding: 23px;
     border-image: url("images/border.jpg") 10 / 3px / 3px round;
+}
+
+.art-row p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 950px;
+}
+
+.art-description::-webkit-scrollbar {
+    width: 10px;
+}
+
+.art-description::-webkit-scrollbar-track {
+    background-color: #414850;
+}
+
+.art-description::-webkit-scrollbar-thumb {
+    background-color: #c6ba8d;
+    border-radius: 8px;
+    border: 2px solid #414850;
 }
 
 .art-row strong {
@@ -408,6 +432,12 @@ footer h2 {
         justify-self: center;
     }
 
+    .art-description {
+        grid-area: description;
+        max-height: 220px;
+        text-align: left;
+    }
+
     .art-row img {
         width: 400px;
         height: 500px;
@@ -419,7 +449,8 @@ footer h2 {
     }
 
     .art-row p {
-        grid-area: description;
+        max-height: 220px;
+        text-align: center;
     }
 
     .art-row.landscape-art img {
