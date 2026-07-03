@@ -74,7 +74,6 @@ header {
     display: none;
 }
 
-/* Show the moon icon when light mode is active */
 body.light-mode .sun-icon {
     display: none;
 }

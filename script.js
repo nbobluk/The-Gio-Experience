@@ -1,6 +1,6 @@
 "use strict";
 
-var themeToggle = document.querySelector("#themeToggle");
+let themeToggle = document.querySelector("#themeToggle");
 
 if (themeToggle) {
     themeToggle.addEventListener("click", function () {
