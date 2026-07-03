@@ -7,28 +7,91 @@ body {
     font-family: "Raleway", sans-serif;
     background-color: #f5f0e8;
     color: #38372a;
-
-    background-image: url("images/background_3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image:
+        linear-gradient(rgba(20, 24, 29, 0.48), rgba(20, 24, 29, 0.48)),
+        url("images/background_3.jpg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
 }
 
 .performing-arts-page {
-    background-image: url("images/background_4.jpg");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image:
+        linear-gradient(rgba(20, 24, 29, 0.48), rgba(20, 24, 29, 0.48)),
+        url("images/background_4.jpg");
+    background-size: cover, cover;
+    background-position: center, top;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
 }
 
 header {
+    position: relative;
     padding: 28px;
     border-bottom: 1px solid #38372a;
     border-image: url("images/border.jpg") 10 / 3px / 3px round;
     background-color: #414850;
     text-align: center;
+}
+
+.theme-toggle {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    z-index: 1;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    color: #c6ba8d;
+    background-color: rgba(65, 72, 80, 0.75);
+    border: 1px solid #c6ba8d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease;
+}
+
+.theme-toggle:hover, .theme-toggle:focus-visible {
+    color: #414850;
+    background-color: #c6ba8d;
+    outline: none;
+    transform: scale(1.08);
+}
+
+.theme-icon {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.moon-icon {
+    display: none;
+}
+
+/* Show the moon icon when light mode is active */
+body.light-mode .sun-icon {
+    display: none;
+}
+
+body.light-mode .moon-icon {
+    display: block;
+}
+
+body.light-mode .theme-toggle {
+    color: #4d3d29;
+    background-color: rgba(255, 252, 246, 0.75);
+    border-color: #6b5438;
+}
+
+body.light-mode .theme-toggle:hover, body.light-mode .theme-toggle:focus-visible {
+    color: #fffaf1;
+    background-color: #6b5438;
 }
   
 nav {
@@ -82,6 +145,8 @@ h1 {
     height: 1.3rem;
     display: block;
 }
+
+
   
 .instagram-link:hover, .instagram-link:focus-visible {
     color: #c13584;
@@ -236,6 +301,22 @@ footer h2 {
     animation: fadeIn 1.5s ease-in-out forwards;
     animation-delay: 2s;
 }
+
+@media screen and (max-width: 700px) {
+    .theme-toggle {
+        right: 14px;
+        bottom: 14px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .theme-icon {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
 
 /*Performing arts*/
 
@@ -750,5 +831,198 @@ footer h2 {
     .name-fields {
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+}
+
+/* Light-Mode */ 
+
+body.light-mode {
+    color-scheme: light;
+    color: #3d3429;
+    background-color: #f8f3e9;
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.68), rgba(255, 250, 241, 0.68)),
+        url("images/background_3.jpg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+}
+
+body.performing-arts-page.light-mode {
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.68), rgba(255, 250, 241, 0.68)),
+        url("images/background_4.jpg");
+    background-size: cover, cover;
+    background-position: center, top;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+}
+
+
+body.light-mode header {
+    background-color: rgba(245, 238, 222, 0.96);
+    border-bottom-color: #756044;
+}
+
+body.light-mode nav a, body.light-mode .socials a, body.light-mode .card {
+    color: #4d3d29;
+}
+
+body.light-mode nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+body.light-mode h1 {
+    color: #4d3d29;
+}
+
+body.light-mode footer {
+    background-color: rgba(245, 238, 222, 0.97);
+    color: #3d3429;
+}
+
+body.light-mode .card {
+    background-color: rgba(255, 252, 246, 0.92);
+}
+
+body.light-mode .card:hover, body.light-mode .card:focus-visible {
+    color: #2f2922;
+    background-color: #ddcba8;
+}
+
+
+body.light-mode .bio {
+    color: #3d3429;
+    background-color: rgba(255, 252, 246, 0.9);
+}
+
+body.light-mode .bio strong {
+    color: #5b422a;
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
+
+body.light-mode .art-row p {
+    color: #3d3429;
+    background-color: rgba(255, 252, 246, 0.92);
+}
+
+body.light-mode .art-row strong {
+    color: #5b422a;
+}
+
+body.light-mode .art-row img {
+    background-color: #f0e2c9;
+}
+
+body.light-mode .art-row.landscape-art img {
+    background-color: #eee4d4;
+}
+
+body.light-mode .california-intro, body.light-mode .landmark-section {
+    color: #3d3429;
+    background-color: rgba(255, 252, 246, 0.92);
+}
+
+body.light-mode .california-intro img {
+    background-color: #f0e2c9;
+    border-color: #756044;
+}
+
+body.light-mode .california-bio p, body.light-mode .landmark-item p {
+    color: #3d3429;
+}
+
+body.light-mode .landmark-section > h2 {
+    color: #4d3d29;
+}
+
+body.light-mode .landmark-item {
+    border-bottom-color: rgba(117, 96, 68, 0.45);
+}
+
+body.light-mode .landmark-item img {
+    background-color: #f0e2c9;
+    border-color: #756044;
+}
+
+body.light-mode .landmark-item h3 {
+    color: #3d3429;
+    background-color: #e7d4af;
+    border-color: #756044;
+}
+
+body.light-mode .landmark-browser::-webkit-scrollbar-track {
+    background-color: #f8f3e9;
+}
+
+body.light-mode .landmark-browser::-webkit-scrollbar-thumb {
+    background-color: #9c815b;
+    border-color: #f8f3e9;
+}
+
+
+body.light-mode .spiritual-gallery figure {
+    background-color: rgba(255, 252, 246, 0.9);
+}
+
+body.light-mode .spiritual-gallery img {
+    background-color: #f0e2c9;
+    border-color: #756044;
+}
+
+body.light-mode .spiritual-services, body.light-mode .contact-section {
+    color: #3d3429;
+    background-color: rgba(255, 252, 246, 0.92);
+}
+
+body.light-mode .service-image h3, body.light-mode .contact-section h2 {
+    color: #4d3d29;
+}
+
+body.light-mode .spiritual-service {
+    border-bottom-color: rgba(117, 96, 68, 0.45);
+}
+
+body.light-mode .service-description, body.light-mode .contact-section > p {
+    color: #3d3429;
+}
+
+body.light-mode .spiritual-form label {
+    color: #3d3429;
+}
+
+body.light-mode .spiritual-form input, body.light-mode .spiritual-form select, body.light-mode .spiritual-form textarea {
+    color: #3d3429;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: #756044;
+}
+
+body.light-mode .spiritual-form input:focus, body.light-mode .spiritual-form select:focus, body.light-mode .spiritual-form textarea:focus {
+    outline-color: rgba(156, 129, 91, 0.85);
+}
+
+body.light-mode .spiritual-form button {
+    color: #fffaf1;
+    background-color: #6b5438;
+    border-color: #4d3d29;
+}
+
+body.light-mode .spiritual-form button:hover, body.light-mode .spiritual-form button:focus-visible {
+    background-color: #3d3429;
+}
+
+body.light-mode a:focus-visible, body.light-mode button:focus-visible {
+    outline: 3px solid #8e704b;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 675px) {
+    body.performing-arts-page.light-mode {
+        background-size: cover, 160%;
     }
 }
