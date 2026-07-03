@@ -292,7 +292,7 @@ footer {
 }
 
 footer h2 {
-    display: inline-block;
+    display: none;
     padding: 1px 1px;
     font-size: 2rem;
     margin-bottom: 1px;
