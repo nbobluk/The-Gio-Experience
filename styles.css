@@ -8,9 +8,17 @@ body {
     background-color: #f5f0e8;
     color: #38372a;
 
-    background-image: url("images/astro.jpg");
+    background-image: url("images/background_3.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.performing-arts-page {
+    background-image: url("images/background_4.jpg");
+    background-size: cover;
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -18,6 +26,7 @@ body {
 header {
     padding: 28px;
     border-bottom: 1px solid #38372a;
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
     background-color: #414850;
     text-align: center;
 }
@@ -124,8 +133,8 @@ main {
 
     mask-image: radial-gradient(
         ellipse at center,
-        black 30%,
-        transparent 60%
+        black 50%,
+        transparent 70%
     );
 }
 
@@ -159,17 +168,17 @@ main {
 }
   
 .card {
-    width: 200px;
+    width: 170px;
     min-height: 70px;
     padding: 3px 8px;
-    border: 1px solid #38372a;
     background-color: #414850;
     font-size: 1.4rem;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 35%;
+    border-radius: 5%;
+    border-image: url("images/border.jpg") 10 / 2px / 1px round;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
   
@@ -180,9 +189,10 @@ main {
 .bio {
     text-align: center;
     margin-bottom: 60px;
-    background-color: rgba(245, 240, 232, 0.75);
+    color: #c6ba8d;
+    background-color: rgba(65,72,80, 0.95);
     padding: 13px;
-    border-radius: 30px;
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
     animation: fadeIn 2.5s ease-in-out forwards;
 }
 
@@ -197,19 +207,31 @@ main {
     line-height: 1.7;
     font-size: 1.1rem;
 }
+
+.bio strong {
+    background-image: url('images/border.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: 500;
+}
   
 footer {
-    padding: 32px 24px;
+    padding: 1px 1px 8px 1px;
     background-color: #414850;
     color: #c6ba8d;
     text-align: center;
+    border-image: url("images/border.jpg") 10 / 1px / 1px round;
 }
 
 footer h2 {
     display: inline-block;
-    padding: 8px 28px;
+    padding: 1px 1px;
     font-size: 2rem;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
     animation-delay: 2s;
@@ -234,58 +256,96 @@ footer h2 {
   
 .art-row {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 36px;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 4px;
     align-items: center;
     margin-bottom: 48px;
 }
 
+.art-row > div {
+    min-width: 0;
+}
+
 .art-row img {
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     object-fit: cover;
-    border: 1px solid #38372a;
-    border-radius: 40px;
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
     background-color: #c6ba8d;
+}
+
+.art-row.landscape-art {
+    grid-template-columns: 400px minmax(0, 1fr);
+}
+
+.art-row.landscape-art img {
+    width: 400px;
+    height: 260px;
+    object-fit: contain;
+    background-color: #000000;
 }
   
 .art-row h2 {
-    font-family: "Raleway Dots", sans-serif;
-    display: inline-block;
-    color: #c6ba8d;
-    background-color: #414850;
-    padding: 19px 34px;
-    border-radius: 50%;
-    font-size: 2rem;
-    margin: 0 0 12px;
-     -webkit-mask-image: radial-gradient(
-        ellipse at center,
-        black 40%,
-        transparent 100%
-    );
-
-    mask-image: radial-gradient(
-        ellipse at center,
-        black 55%,
-        transparent 70%
-    );
+    display: none;
 }
   
 .art-row p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin: 0;
-    max-width: 600px;
+    max-width: 950px;
+    color: #c6ba8d;
+    background-color: rgba(65,72,80, 1);
+    padding: 23px;
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
 }
+
+.art-row strong {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 675px) {
+    .performing-arts-page {
+        background-size: 160%;
+    }
+}    
   
-@media screen and (max-width: 700px) {
-    .art-row {
+@media screen and (max-width: 950px) {
+    .art-row, .art-row.landscape-art {
         grid-template-columns: 1fr;
+        grid-template-areas: "title" "image" "description";
         text-align: center;
     }
-  
+
+    .art-row > div {
+        display: contents;
+    }
+
+    .art-row h2 {
+        grid-area: title;
+        justify-self: center;
+    }
+
     .art-row img {
+        width: 400px;
+        height: 500px;
+    }
+
+    .art-row img, .art-row.landscape-art img {
+        grid-area: image;
         margin: 0 auto;
+    }
+
+    .art-row p {
+        grid-area: description;
+    }
+
+    .art-row.landscape-art img {
+        width: 100%;
+        max-width: 700px;
+        height: 400px;
     }
 }
 
@@ -298,9 +358,9 @@ footer h2 {
     align-items: center;
     margin-bottom: 70px;
     padding: 30px;
-    background-color: rgba(245, 240, 232, 0.9);
-    border: 1px solid #38372a;
-    border-radius: 30px;
+    background-color: rgba(65,72,80, 0.95);
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
+    border-radius: 2px;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 1s;
@@ -308,41 +368,26 @@ footer h2 {
 
 .california-intro img {
     width: 100%;
-    max-width: 360px;
+    max-width: 500px;
     margin: 0 auto;
     display: block;
-    padding: 16px;
+    padding: 6px;
     background-color: #c6ba8d;
     border: 1px solid #38372a;
-    border-radius: 30px;
+    border-radius: 10px;
     object-fit: contain;
 }
 
-.california-bio h2, .landmark-section > h2 {
-    font-family: "Raleway Dots", sans-serif;
-    display: inline-block;
-    margin: 0 0 18px;
-    padding: 18px 29px;
-    color: #c6ba8d;
-    background-color:rgba(65, 72, 80, .78);
-    font-size: 2rem;
-    -webkit-mask-image: radial-gradient(
-        ellipse at center,
-        black 60%,
-        transparent 100%
-    );
 
-    mask-image: radial-gradient(
-        ellipse at center,
-        black 65%,
-        transparent 70%
-    );
+.california-bio h2 {
+    display: none;
 }
 
 .california-bio p {
     margin: 0 0 18px;
     font-size: 1.1rem;
     line-height: 1.7;
+    color: #c6ba8d;
 }
 
 .california-bio p:last-child {
@@ -351,16 +396,20 @@ footer h2 {
 
 .landmark-section {
     padding: 34px;
-    background-color: rgba(245, 240, 232, 0.9);
-    border: 1px solid #38372a;
-    border-radius: 30px;
+    background-color: rgba(65,72,80, 0.95);
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
     opacity: 0;
     animation: fadeIn 2.5s ease-in-out forwards;
     animation-delay: 1.5s;
 }
 
 .landmark-section > h2 {
-    margin-bottom: 28px;
+    font-family: "Raleway Dots", sans-serif;
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 18px 29px;
+    color: #c6ba8d;
+    font-size: 2rem;
 }
 
 .landmark-browser {
@@ -407,7 +456,7 @@ footer h2 {
     height: 180px;
     object-fit: cover;
     border: 1px solid #38372a;
-    border-radius: 24px;
+    border-radius: 10px;
     background-color: #c6ba8d;
     transition: transform 0.4s ease;
 }
@@ -418,7 +467,7 @@ footer h2 {
     padding: 6px 18px;
     background-color: #c6ba8d;
     border: 1px solid #38372a;
-    border-radius: 35%;
+    border-radius: 15%;
     font-size: 1.4rem;
 }
 
@@ -426,6 +475,7 @@ footer h2 {
     margin: 0;
     font-size: 1.05rem;
     line-height: 1.7;
+    color: #c6ba8d;  
 }
 
 @media screen and (max-width: 700px) {
@@ -477,3 +527,228 @@ footer h2 {
     }
 }
 
+/* Spiritual Page */
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.spiritual-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    margin-bottom: 70px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.spiritual-gallery figure {
+    width: 100%;
+    max-width: 650px;
+    margin: 0;
+    background-color: rgba(245, 240, 232, 0.78);
+    border-image: url("images/border.jpg") 10 / 30px / 3px round;
+    border-radius: 30px;
+}
+
+.spiritual-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #c6ba8d;
+    border: 1px solid #38372a;
+    border-radius: 20px;
+}  
+
+
+.spiritual-services {
+    padding: 34px;
+    margin-bottom: 70px;
+    background-color: rgba(65, 72, 80, 0.95);
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 1.25s;
+}
+
+.spiritual-services > h2 {
+    display: none;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.spiritual-service {
+    padding-bottom: 34px;
+    border-bottom: 1px solid rgba(198, 186, 141, 0.55);
+}
+
+.spiritual-service:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.service-image h3 {
+    margin: 0 0 12px;
+    color: #c6ba8d;
+    font-family: "Raleway Dots", sans-serif;
+    font-size: 1.6rem;
+}
+
+.service-description {
+    padding: 20px 24px;
+    color: #c6ba8d;
+    border-radius: 5%;
+}
+
+.service-description p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+.contact-section {
+    padding: 34px;
+    background-color: rgba(65, 72, 80, 0.95);
+    border-image: url("images/border.jpg") 10 / 3px / 3px round;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.contact-section h2 {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 19px 34px;
+    color: #c6ba8d;
+    font-family: "Raleway Dots", sans-serif;
+    font-size: 2rem;
+}
+
+.contact-section > p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    padding: 13px;
+    color: #c6ba8d;
+    border-radius: 5%;
+    font-size: .9rem;
+}
+
+.spiritual-form {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.spiritual-form > div {
+    margin-bottom: 20px;
+}
+
+.name-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.spiritual-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: #c6ba8d;
+    font-weight: 700;
+}
+
+.spiritual-form input, .spiritual-form select, .spiritual-form textarea {
+    width: 100%;
+    padding: 12px;
+    color: #38372a;
+    background-color: rgba(255, 255, 255, 0.86);
+    border: 1px solid #38372a;
+    border-radius: 12px;
+    font: inherit;
+}
+
+.spiritual-form textarea {
+    resize: vertical;
+}
+
+.spiritual-form input:focus, .spiritual-form select:focus, .spiritual-form textarea:focus {
+    outline: 3px solid rgba(198, 186, 141, 0.9);
+    outline-offset: 2px;
+}
+
+.spiritual-form button {
+    display: block;
+    margin: 8px auto 0;
+    padding: 12px 34px;
+    color: #c6ba8d;
+    background-color: #414850;
+    border: 1px solid #38372a;
+    border-radius: 25px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.spiritual-form button:hover, .spiritual-form button:focus-visible {
+    background-color: #38372a;
+    transform: scale(1.04);
+}
+
+
+@media screen and (max-width: 700px) {
+    .spiritual-gallery {
+        gap: 28px;
+        margin-bottom: 50px;
+    }
+
+    .spiritual-gallery figure {
+        border-radius: 22px;
+    }
+
+    .spiritual-gallery img {
+        height: auto;
+        min-height: 240px;
+        border-radius: 15px;
+    }
+
+    .spiritual-services, .contact-section {
+        padding: 24px;
+    }
+
+    .spiritual-services > h2, .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .spiritual-service {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .service-description {
+        text-align: left;
+    }
+
+    .name-fields {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
