@@ -437,7 +437,7 @@ footer p {
 .art-description {
     max-height: 280px;
     overflow-y: auto;
-
+    text-align: center;
     color: #c6ba8d;
     background-color: rgba(65, 72, 80, 1);
     padding: 23px;
@@ -446,6 +446,10 @@ footer p {
 
 .art-description a {
     color: inherit;
+}
+
+.art-description ul {
+    text-align: center;
 }
 
 .art-row p {
