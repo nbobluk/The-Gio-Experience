@@ -1,3 +1,54 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -109,6 +160,12 @@ nav a, .socials a, .card {
     padding: 5px;
     color: #c6ba8d;
     text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
 }
   
 h1 {
@@ -301,6 +358,10 @@ footer h2 {
     animation-delay: 2s;
 }
 
+footer p {
+	margin:5px;
+}
+
 @media screen and (max-width: 700px) {
     .theme-toggle {
         right: 14px;
@@ -383,6 +444,10 @@ footer h2 {
     border-image: url("images/border.jpg") 10 / 3px / 3px round;
 }
 
+.art-description a {
+    color: inherit;
+}
+
 .art-row p {
     margin: 0;
     font-size: 1.1rem;
@@ -434,7 +499,8 @@ footer h2 {
 
     .art-description {
         grid-area: description;
-        max-height: 220px;
+        max-height: none;
+        overflow-y: visible;
         text-align: left;
     }
 
@@ -449,7 +515,7 @@ footer h2 {
     }
 
     .art-row p {
-        max-height: 220px;
+        max-height: none;
         text-align: center;
     }
 
@@ -499,6 +565,10 @@ footer h2 {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #c6ba8d;
+}
+
+.california-bio a {
+    color: inherit;
 }
 
 .california-bio p:last-child {
@@ -746,7 +816,7 @@ footer h2 {
 
 .contact-section h2 {
     display: inline-block;
-    margin: 0 0 10px;
+    margin: 0 auto;
     padding: 19px 34px;
     color: #c6ba8d;
     font-family: "Raleway Dots", sans-serif;
@@ -755,7 +825,7 @@ footer h2 {
 
 .contact-section > p {
     max-width: 650px;
-    margin: 0 auto 30px;
+    margin: 0 auto 10px;
     padding: 13px;
     color: #c6ba8d;
     border-radius: 5%;
@@ -822,6 +892,21 @@ footer h2 {
 .spiritual-form button:hover, .spiritual-form button:focus-visible {
     background-color: #38372a;
     transform: scale(1.04);
+}
+
+#form-message {
+    margin-top: 18px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.form-error {
+    color: #c00000;
+}
+
+.form-success {
+    color: #5f8a47;
 }
 
 
@@ -937,9 +1022,16 @@ body.light-mode .bio strong {
     background-clip: initial;
 }
 
-body.light-mode .art-row p {
+body.light-mode .art-description {
     color: #3d3429;
     background-color: rgba(255, 252, 246, 0.92);
+    padding: 23px;
+    margin: 0;
+}
+
+body.light-mode .art-row p {
+    color: #3d3429;
+    background-color: transparent;
 }
 
 body.light-mode .art-row strong {
