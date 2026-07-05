@@ -1108,7 +1108,7 @@ body.light-mode a:focus-visible, body.light-mode button:focus-visible {
 
 
 html {
-    background-color: #f5f0e8;
+    background-color: #111111;
 }
 
 body {
@@ -1162,7 +1162,7 @@ body.performing-arts-page.light-mode::before {
     body::before {
         background-size: cover, cover;
         background-position: center, center top;
-        background-color: #f5f0e8;
+        background-color: #111111;
     }
 
     body:not(.performing-arts-page)::before {
