@@ -1153,6 +1153,15 @@ body.light-mode a:focus-visible, body.light-mode button:focus-visible {
     outline-offset: 3px;
 }
 
+@media screen and (max-width: 650px) {
+    body,
+    .performing-arts-page,
+    body.light-mode,
+    body.performing-arts-page.light-mode {
+        background-attachment:fixed;
+    }
+}
+
 @media screen and (max-width: 675px) {
     body.performing-arts-page.light-mode {
         background-size: cover, 160%;
