@@ -46,8 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
+/* End CSS Reset */
 
 * {
     box-sizing: border-box;
@@ -59,7 +58,6 @@ body {
     background-color: #f5f0e8;
     color: #38372a;
 }
-
 
 header {
     position: relative;
@@ -186,8 +184,6 @@ h1 {
     display: block;
 }
 
-
-  
 .instagram-link:hover, .instagram-link:focus-visible {
     color: #c13584;
 }
@@ -359,8 +355,6 @@ footer p {
         height: 12px;
     }
 }
-
-
 
 /*Performing arts*/
 
@@ -790,7 +784,6 @@ footer p {
     line-height: 1.7;
 }
 
-
 .contact-section {
     padding: 34px;
     background-color: rgba(65, 72, 80, 0.95);
@@ -979,7 +972,6 @@ body.light-mode .card:hover, body.light-mode .card:focus-visible {
     color: #2f2922;
     background-color: #ddcba8;
 }
-
 
 body.light-mode .bio {
     color: #3d3429;
