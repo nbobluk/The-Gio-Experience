@@ -1166,7 +1166,7 @@ body.performing-arts-page.light-mode::before {
     }
 
     body:not(.performing-arts-page)::before {
-        inset: -9%;
+        inset: -19%;
     }
 
     body.light-mode::before {
