@@ -1173,17 +1173,3 @@ body.performing-arts-page.light-mode::before {
         background-color: #f8f3e9;
     }
 }
-
-@supports (-webkit-touch-callout: none) {
-    body::before {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-
-    header,
-    main,
-    footer {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-}
