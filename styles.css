@@ -479,7 +479,12 @@ footer p {
     font-weight: 900;
     text-transform: uppercase;
 }
-  
+
+@media screen and (max-width: 675px) {
+    .performing-arts-page {
+        background-size: 160%;
+    }
+}    
   
 @media screen and (max-width: 950px) {
     .art-row, .art-row.landscape-art {
@@ -592,6 +597,7 @@ footer p {
     color: #c6ba8d;
     font-size: 2rem;
     font-weight: 900;
+
 }
 
 .landmark-browser {
@@ -1147,15 +1153,8 @@ body.light-mode a:focus-visible, body.light-mode button:focus-visible {
     outline-offset: 3px;
 }
 
-
-@media screen and (max-width: 700px) {
-    body,
-    .performing-arts-page,
-    body.light-mode,
+@media screen and (max-width: 675px) {
     body.performing-arts-page.light-mode {
-        background-attachment: scroll, scroll;
-        background-size: 100% 100%, contain;
-        background-position: center top, center top;
-        background-repeat: no-repeat, no-repeat;
+        background-size: cover, 160%;
     }
 }
