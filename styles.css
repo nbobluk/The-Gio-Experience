@@ -1165,8 +1165,9 @@ body.performing-arts-page.light-mode::before {
         background-color: #111111;
     }
 
-    body:not(.performing-arts-page)::before {
-        inset: -19%;
+    body.performing-arts-page::before {
+        background-size: cover, 190% auto;
+        background-position: center, center -10%;
     }
 
     body.light-mode::before {
