@@ -342,13 +342,6 @@ footer p {
 	margin:5px;
 }
 
-footer a[href^="tel"],
-footer a[x-apple-data-detectors] {
-    color: inherit !important;
-    text-decoration: none !important;
-    font: inherit !important;
-}
-
 @media screen and (max-width: 700px) {
     .theme-toggle {
         right: 14px;
@@ -1178,5 +1171,19 @@ body.performing-arts-page.light-mode::before {
 
     body.light-mode::before {
         background-color: #f8f3e9;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    body::before {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    header,
+    main,
+    footer {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 }
