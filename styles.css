@@ -1146,6 +1146,7 @@ footer {
     z-index: 1;
 }
 
+body.performing-arts-page::before {
     background-image:
         linear-gradient(rgba(20, 24, 29, 0.48), rgba(20, 24, 29, 0.48)),
         url("images/background_4.jpg");
