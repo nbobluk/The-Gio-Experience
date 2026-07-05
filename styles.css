@@ -1167,7 +1167,7 @@ body.performing-arts-page.light-mode::before {
 
     body.performing-arts-page::before {
         background-size: cover, 190% auto;
-        background-position: center, center -10%;
+        background-position: center, center 0%;
     }
 
     body.light-mode::before {
