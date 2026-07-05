@@ -1130,7 +1130,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -0;
+    z-index: 0;
     background-image:
         linear-gradient(rgba(20, 24, 29, 0.48), rgba(20, 24, 29, 0.48)),
         url("images/background_3.jpg");
@@ -1171,6 +1171,10 @@ body.performing-arts-page.light-mode::before {
         background-size: cover, cover;
         background-position: center, center top;
         background-color: #f5f0e8;
+    }
+
+    body:not(.performing-arts-page)::before {
+        inset: -9%;
     }
 
     body.light-mode::before {
